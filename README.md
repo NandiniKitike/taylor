@@ -2,11 +2,6 @@
 
 A React + TypeScript web application that helps busy professionals find recipes based on ingredients they have at home.
 
-##  Live Demo
-- **Deployed App:** [https://taylor.vercel.app/]
-- **ChatGPT Link:** [https://chatgpt.com/share/6900e217-4a3c-800b-82b5-cd90d0522b2d]
-- **GitHub Repo:** [https://github.com/NandiniKitike/taylor]
-
 ##  About
 Built for **Taylor**, a busy professional who needs quick meal ideas. Simply search by ingredient (e.g., "chicken", "rice", "tomato") to discover recipes.
 
@@ -67,25 +62,8 @@ strMealThumb: string;
 2. Click "Search" or press Enter
 3. View recipe results in grid layout
 
-##  AI Development
-Built with ChatGPT assistance for:
-- Project architecture
-- TypeScript implementation
-- Error handling
-- UI/UX design
 
-## Submission
-**Aganitha Cognitive Solutions - Full Stack Developer Exercise 2024-25**
 
--  Level 1: ChatGPT collaboration link
--  Level 2: Deployed application
--  Level 3: GitHub repository with documentation
-
-**Submitted:** October 28, 2025
-
-##  Author
-Full Stack Developer  
-Bangalore, India
 
 
 
