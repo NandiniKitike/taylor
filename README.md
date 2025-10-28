@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+#  Recipe Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript web application that helps busy professionals find recipes based on ingredients they have at home.
 
-Currently, two official plugins are available:
+##  Live Demo
+- **Deployed App:** [https://taylor.vercel.app/]
+- **ChatGPT Link:** [https://chatgpt.com/share/6900e217-4a3c-800b-82b5-cd90d0522b2d]
+- **GitHub Repo:** [https://github.com/NandiniKitike/taylor]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  About
+Built for **Taylor**, a busy professional who needs quick meal ideas. Simply search by ingredient (e.g., "chicken", "rice", "tomato") to discover recipes.
 
-## React Compiler
+##  Features
+- Search recipes by ingredient
+- Real-time loading states
+- Error handling
+- Responsive design (mobile to desktop)
+- Recipe cards with images
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Tech Stack
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- TheMealDB API
 
-## Expanding the ESLint configuration
+##  Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Run development server
+npm run dev
+Build for production
+npm run build
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+##  Project Structure
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+src/
+├── assets/services/
+│ └── mealService.ts # API calls
+├── types/
+│ └── meal.ts # TypeScript types
+└── App.tsx # Main component
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## API Integration
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Service Layer:**
+const BASE_URL = 'https://www.themealdb.com/api/json/v1/1';
+
+export const filterByIngredient = async (ingredient: string) => {
+const response = await fetch(${BASE_URL}/filter.php?i=${ingredient});
+if (!response.ok) throw new Error('Failed to fetch meals');
+return response.json();
+};
+**Types:**
+export interface Meal {
+idMeal: string;
+strMeal: string;
+strMealThumb: string;
+}
+
+
+## Usage
+
+1. Enter an ingredient in the search box
+2. Click "Search" or press Enter
+3. View recipe results in grid layout
+
+##  AI Development
+Built with ChatGPT assistance for:
+- Project architecture
+- TypeScript implementation
+- Error handling
+- UI/UX design
+
+## Submission
+**Aganitha Cognitive Solutions - Full Stack Developer Exercise 2024-25**
+
+-  Level 1: ChatGPT collaboration link
+-  Level 2: Deployed application
+-  Level 3: GitHub repository with documentation
+
+**Submitted:** October 28, 2025
+
+##  Author
+Full Stack Developer  
+Bangalore, India
+
+
+
+
